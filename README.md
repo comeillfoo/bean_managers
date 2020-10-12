@@ -7,7 +7,7 @@ The third problem of web-programming discipline. Must have JSF framework and wor
 
 Разработать приложение на базе JavaServer Faces Framework, которое осуществляет проверку попадания точки в заданную область на координатной плоскости.
 
-![Task Area](https://github.com/Come1LLF00/bean_managers/blob/main/areas.png "Area")
+![Task Area](https://github.com/Come1LLF00/bean_managers/blob/master/areas.png "Area")
 
 Приложение должно включать в себя 2 facelets-шаблона - стартовую страницу и основную страницу приложения, а также набор управляемых бинов (managed beans), реализующих логику на стороне сервера.
 
