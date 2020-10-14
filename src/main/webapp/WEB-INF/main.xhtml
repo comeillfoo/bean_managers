@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: Asus
+  Date: 14.10.2020
+  Time: 18:31
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+
+<h:head>
+    <title>Main</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:outputText value="X"/>
+        <h:selectOneRadio value="#{Result.entry.x}">
+            <f:selectItem itemValue="-2" itemLabel="-2"/>
+            <f:selectItem itemValue="-1.5" itemLabel="-1.5"/>
+            <f:selectItem itemValue="-1" itemLabel="-1"/>
+            <f:selectItem itemValue="-0.5" itemLabel="-0.5"/>
+            <f:selectItem itemValue="0" itemLabel="0"/>
+            <f:selectItem itemValue="0.5" itemLabel="0.5"/>
+            <f:selectItem itemValue="1" itemLabel="1"/>
+            <f:selectItem itemValue="1.5" itemLabel="1.5"/>
+        </h:selectOneRadio>
+        <h:outputText value="Y"/>
+        <h:inputText value="#{ResultBean.entry.y}"/>
+        <h:outputText value="R"/>
+        <h:selectOneRadio value="#{Result.entry.x}">
+            <f:selectItem itemValue="1" itemLabel="-2"/>
+            <f:selectItem itemValue="1.5" itemLabel="-1.5"/>
+            <f:selectItem itemValue="2" itemLabel="-1"/>
+            <f:selectItem itemValue="2.5" itemLabel="-0.5"/>
+            <f:selectItem itemValue="3" itemLabel="0"/>
+        </h:selectOneRadio>
+    </h:form>
+</h:body>
+
+</html>
