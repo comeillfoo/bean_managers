@@ -1,10 +1,10 @@
 package checking;
 
-import beans.ResultBean;
+import beans.Entry;
 
 public abstract class Check {
 
-    public static boolean isHit(ResultBean entry) {
+    public static boolean isHit(Entry entry) {
         Double x = entry.getX();
         Double y = entry.getY();
         Double r = entry.getR();
