@@ -1,38 +1,30 @@
 package beans;
 
+import checking.Check;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @ManagedBean(name = "resultBean", eager = true)
 @ApplicationScoped
 public class ResultBean implements Serializable {
     private static final long  serialVersionUID = 1L;
+    private Entry entry = new Entry();
+    public List<Entry> resultyEntry = new ArrayList<Entry>();
 
-    private Double x;
-    private Double y;
-    private Double r;
-    private boolean isHit = false;
+    public ResultBean() { }
 
-    //empty constructor to follow the specification of java beans
-    public ResultBean() {}
-
-    public ResultBean(double x, double y, double r) {
-        this.x = x;
-        this.y = y;
-        this.r = r;
+    public Entry getEntry() {
+        return entry;
+    }
+    public void setEntry(Entry entry) {
+        this.entry = entry;
     }
 
-
-    public Double getX() { return x; }
-    public Double getY() { return y; }
-    public Double getR() { return r; }
-
-    public void setX(Double x) { this.x = x; }
-    public void setY(Double y) { this.y = y; }
-    public void setR(Double r) { this.r = r; }
-
-    public boolean getHit() { return isHit; }
-    public void setHit(boolean hit) { isHit = hit; }
-
+    public boolean isHit() {
+        return Check.isHit(entry);
+    }
 }
