@@ -1,6 +1,6 @@
 package checking;
 
-import beans.Entry;
+import entities.Entry;
 
 public abstract class Check {
 
