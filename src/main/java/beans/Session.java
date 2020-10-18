@@ -1,15 +1,13 @@
 package beans;
 
-import entities.Entry;
-
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SessionBean {
+public class Session {
 
-    public SessionBean() {}
+    public Session() {}
 
     public List<Entry> getSessionEntryList() {
         FacesContext facesContext = FacesContext.getCurrentInstance();

@@ -9,7 +9,7 @@
     <!-- adding beans configuration -->
     <context-param>
         <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>WEB-INF/beans-manage.xml</param-value>
+        <param-value>/WEB-INF/beans-config.xml</param-value>
     </context-param>
 
     <!-- Faces Servlet -->
@@ -28,8 +28,4 @@
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
-    <context-param>
-        <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>/WEB-INF/bean-config.xml,/template/tmpResultTable.xhtml</param-value>
-    </context-param>
 </web-app>
