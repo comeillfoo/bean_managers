@@ -15,8 +15,12 @@
             <fieldset>
                 <label>X</label>
                 <h:selectOneRadio id="x-changing-parameter" layout="pageDirection" value="#{resultBean.entry.x}">
-                    <c:forEach var="x" begin="-2" end="1" step="1">
-                        <f:selectItem itemLabel="${x}" itemValue="${x}" />
+                    <f:selectItem itemLabel="-2.0" itemValue="-2.0" />
+                    <f:selectItem itemLabel="-1.5" itemValue="-1.5" />
+                    <f:selectItem itemLabel="-1.0" itemValue="-1.0" />
+                    <f:selectItem itemLabel="-0.5" itemValue="-0.5" />
+                    <c:forEach var="x" begin="0" end="15" step="5">
+                        <f:selectItem itemLabel="${x/10}" itemValue="${x/10}" />
                     </c:forEach>
                 </h:selectOneRadio>
             </fieldset>
@@ -29,14 +33,14 @@
                     </f:convertNumber>
                 </h:inputText>
 
-                <h:message for="y-changing-parameter" />
+                <h:message for="y-changing-parameter">Y-valuie should be specified</h:message>
             </fieldset>
 
             <fieldset>
                 <label>R</label>
                 <h:selectOneRadio id="r-changing-parameter" layout="pageDirection" value="#{resultBean.entry.r}">
-                    <c:forEach var="r" begin="1" end="3" step="1">
-                        <f:selectItem itemLabel="${r}" itemValue="${r}" />
+                    <c:forEach var="r" begin="10" end="30" step="5">
+                        <f:selectItem itemLabel="${r/10}" itemValue="${r/10}" />
                     </c:forEach>
                 </h:selectOneRadio>
             </fieldset>
