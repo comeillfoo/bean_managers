@@ -10,23 +10,21 @@
 
 <h:body>
     <ui:composition>
+        #{resultBean.resultEntry = sessionBean.entryList}
         <h:form>
             <fieldset>
-                <label>X</label>
-                <h:selectOneRadio id="x-changing-parameter" layout="pageDirection" value="#{resultBean.entry.x}">
-                    <f:selectItem itemLabel="-2.0" itemValue="-2.0" />
-                    <f:selectItem itemLabel="-1.5" itemValue="-1.5" />
-                    <f:selectItem itemLabel="-1.0" itemValue="-1.0" />
-                    <f:selectItem itemLabel="-0.5" itemValue="-0.5" />
-                    <c:forEach var="x" begin="0" end="15" step="5">
-                        <f:selectItem itemLabel="${x/10}" itemValue="${x/10}" />
+                <label>изменение x</label>
+                <h:selectOneRadio id="x-changing-parameter" layout="pageDirection" value="#{resultBean.x}">
+                    <c:forEach var="x" begin="-4" end="3" step="1">
+                        <c:set var="counter" value="${x / 2 }" />
+                        <f:selectItem itemLabel="${counter}" itemValue="${counter}" />
                     </c:forEach>
                 </h:selectOneRadio>
             </fieldset>
 
             <fieldset>
-                <label>Y</label>
-                <h:inputText id="y-changing-parameter" value="#{resultBean.entry.y}" required="true">
+                <label>изменение y</label>
+                <h:inputText id="y-changing-parameter" value="#{resultBean.y}" required="true">
                     <f:convertNumber>
                         <f:validateDoubleRange minimum="-3" maximum="5" />
                     </f:convertNumber>
@@ -36,10 +34,11 @@
             </fieldset>
 
             <fieldset>
-                <label>R</label>
-                <h:selectOneRadio id="r-changing-parameter" layout="pageDirection" value="#{resultBean.entry.r}">
-                    <c:forEach var="r" begin="10" end="30" step="5">
-                        <f:selectItem itemLabel="${r/10}" itemValue="${r/10}" />
+                <label>изменение r</label>
+                <h:selectOneRadio id="r-changing-parameter" layout="pageDirection" value="#{resultBean.r}">
+                    <c:forEach var="r" begin="2" end="6" step="1">
+                        <c:set var="counter" value="${r / 2 }" />
+                        <f:selectItem itemLabel="${counter}" itemValue="${counter}" />
                     </c:forEach>
                 </h:selectOneRadio>
             </fieldset>
