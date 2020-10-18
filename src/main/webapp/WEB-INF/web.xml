@@ -15,6 +15,6 @@
 
     <context-param>
         <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>/WEB-INF/bean-config.xml</param-value>
+        <param-value>/WEB-INF/bean-config.xml,/template/tmpResultTable.xhtml</param-value>
     </context-param>
 </web-app>
