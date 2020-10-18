@@ -7,14 +7,15 @@
       xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:body>
+<body>
     <ui:composition>
         <h:form>
             <fieldset>
                 <label>изменение x</label>
                 <h:selectOneRadio id="x-changing-parameter" layout="pageDirection" value="#{resultBean.x}">
-                    <c:forEach var="x" begin="-2.0" end="1.5" step="0.5">
-                        <f:selectItem itemLabel="${x}" itemValue="${x}" />
+                    <c:forEach var="x" begin="-4" end="3" step="1">
+                        <c:set var="counter" value="${x / 2 }" />
+                        <f:selectItem itemLabel="${counter}" itemValue="${counter}" />
                     </c:forEach>
                 </h:selectOneRadio>
             </fieldset>
@@ -33,17 +34,18 @@
             <fieldset>
                 <label>изменение r</label>
                 <h:selectOneRadio id="r-changing-parameter" layout="pageDirection" value="#{resultBean.r}">
-                    <c:forEach var="r" begin="1.0" end="3.0" step="0.5">
-                        <f:selectItem itemLabel="${r}" itemValue="${r}" />
+                    <c:forEach var="r" begin="2" end="6" step="1">
+                        <c:set var="counter" value="${r / 2 }" />
+                        <f:selectItem itemLabel="${counter}" itemValue="${counter}" />
                     </c:forEach>
                 </h:selectOneRadio>
             </fieldset>
 
             <fieldset>
-                <h:commandButton id="submit" name="check" value="check" />
+                <h:commandButton id="submit" value="check" />
             </fieldset>
         </h:form>
     </ui:composition>
-</h:body>
+</body>
 
 </html>
