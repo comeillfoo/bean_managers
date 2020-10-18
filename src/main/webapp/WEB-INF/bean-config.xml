@@ -11,7 +11,7 @@
     </managed-bean>
     <managed-bean>
         <managed-bean-name>sessionBean</managed-bean-name>
-        <managed-bean-class>beans.SessionBean</managed-bean-class>
+        <managed-bean-class>beans.Session</managed-bean-class>
         <managed-bean-scope>application</managed-bean-scope>
     </managed-bean>
 </faces-config>

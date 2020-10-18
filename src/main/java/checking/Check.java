@@ -10,7 +10,6 @@ public abstract class Check {
         Double r = bean.getR();
 
         if (x == null || y == null || r == null) {
-            bean.setHit(false);
             throw new NullPointerException("Parameters shouldn't be null");
         }
         if (x >= 0 && y <= 0 && (x - r <= y)) {

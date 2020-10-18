@@ -3,12 +3,14 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<body>
+<h:body>
     <ui:composition>
+        #{resultBean.resultEntry = sessionBean.entryList}
         <h:form>
             <fieldset>
                 <label>изменение x</label>
@@ -28,7 +30,7 @@
                     </f:convertNumber>
                 </h:inputText>
 
-                <h:message for="y-changing-parameter" />
+                <h:message for="y-changing-parameter">Y-valuie should be specified</h:message>
             </fieldset>
 
             <fieldset>
@@ -42,10 +44,10 @@
             </fieldset>
 
             <fieldset>
-                <h:commandButton id="submit" value="check" />
+                <h:commandButton id="submit" name="check" value="#{resultBean.addResult()}" />
             </fieldset>
         </h:form>
     </ui:composition>
-</body>
+</h:body>
 
 </html>

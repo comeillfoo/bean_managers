@@ -5,34 +5,32 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:body>
-    <ui:composition>
-        <table>
-              <tr>
-                  <td>
-                      <ui:insert name="author__logo">
-                          <h:graphicImage alt="logo" />
-                      </ui:insert>
-                  </td>
-                  <th>ФИО</th>
-                  <td>
-                      <ui:insert name="author__name-surname">Фамилия Имя Отчество</ui:insert>
-                  </td>
-              </tr>
-              <tr>
-                  <th>Группа</th>
-                  <td>
-                      <ui:insert name="author__group-number">P3214</ui:insert>
-                  </td>
-              </tr>
-              <tr>
-                  <th>Вариант</th>
-                  <td>
-                      <ui:insert name="author__variant-number">381891</ui:insert>
-                  </td>
-              </tr>
-          </table>
-    </ui:composition>
-</h:body>
+<ui:composition>
+    <table>
+          <tr>
+              <td>
+                  <ui:insert name="author__logo">
+                      <h:graphicImage alt="logo" />
+                  </ui:insert>
+              </td>
+              <th>ФИО</th>
+              <td>
+                  <ui:insert name="author__name-surname">Author</ui:insert>
+              </td>
+          </tr>
+          <tr>
+              <th>Группа</th>
+              <td>
+                  <ui:insert name="author__group-number">group</ui:insert>
+              </td>
+          </tr>
+          <tr>
+              <th>Вариант</th>
+              <td>
+                  <ui:insert name="author__variant-number">number</ui:insert>
+              </td>
+          </tr>
+      </table>
+</ui:composition>
 
 </html>

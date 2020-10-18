@@ -9,7 +9,7 @@ import java.util.Date;
 public class ResultsEntityManager {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="id", unique = true, nullable = false, )
+    @Column(name="id", unique = true, nullable = false)
     private long id;
 
     @Column(name="date")

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition>
+        <table>
+            <tr>
+                <th>
+                    X
+                </th>
+                <th>
+                    Y
+                </th>
+                <th>
+                    R
+                </th>
+            </tr>
+            <c:forEach var="entry" items="#{resultBean.resultEntry}">
+                <tr>
+                    <td>
+                        ${entry.x}
+                    </td>
+                    <td>
+                        ${entry.y}
+                    </td>
+                    <td>
+                        ${entry.r}
+                    </td>
+                    <td>
+                        ${entry.isHit}
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </ui:composition>
+</html>

@@ -1,43 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head>
-    <title><ui:insert name="title">Стартовая страница</ui:insert></title>
-</h:head>
-
-<h:body>
-    <div id="wrap">
-        <div class="header">
-            <ui:composition template="/template/tmpAuthor.xhtml">
-                <ui:define name="author__logo"><img src="" alt="logo" /></ui:define>
-                <ui:define name="author__name-surname">Ханнанов Ленар</ui:define>
-                <ui:define name="author__group-number">P3214</ui:define>
-                <ui:define name="author__variant-number">381891</ui:define>
-            </ui:composition>
-            <ui:composition template="/template/tmpAuthor.xhtml">
-                <ui:define name="author__logo"><img src="" alt="logo" /></ui:define>
-                <ui:define name="author__name-surname">Сушкевич Антон</ui:define>
-                <ui:define name="author__group-number">P3214</ui:define>
-                <ui:define name="author__variant-number">381891</ui:define>
-            </ui:composition>
-        </div>
-
-        <div id="clock">
-            <p:clock autoSync="true" syncInterval="5000" pattern="HH:mm:ss dd.MM.yyyy" displayMode="digital" />
-        </div>
-
-        <div class="content">
-            <ui:insert name="form">
-                <ui:include src="/template/tmpForm.xhtml" />
-            </ui:insert>
-        </div>
-
-        <!-- accordingly to JSF 2.0 it uses navigation-rules -->
-        <h:link value="на основную страницу" />
-    </div>
-</h:body>
-
+<ui:composition template="/template/tmpStartupPage.xhtml">
+    <ui:define name="title">Welcome page</ui:define>
+</ui:composition>
 </html>
