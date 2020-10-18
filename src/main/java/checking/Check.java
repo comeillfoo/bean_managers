@@ -4,14 +4,15 @@ import entities.Entry;
 
 public abstract class Check {
 
-    public static boolean isHit(Entry entry) {
+    public static boolean isHit(Entry entry){
         Double x = entry.getX();
         Double y = entry.getY();
         Double r = entry.getR();
 
         if (x == null || y == null || r == null) {
             entry.setHit(false);
-            throw new NullPointerException("Parameters shouldn't be null");
+            return false;
+//            throw new NullPointerException("Parameters shouldn't be null");
         }
         if (x >= 0 && y <= 0 && (x - r <= y)) {
             entry.setHit(true);

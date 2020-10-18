@@ -8,7 +8,7 @@
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
             <description>безусловный переход на основную страницу</description>
-            <from-outcome>success</from-outcome>
+<!--            <from-outcome>success</from-outcome>-->
             <to-view-id>/main.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
@@ -17,7 +17,7 @@
         <from-view-id>/main.xhtml</from-view-id>
         <navigation-case>
             <description>безусловный переход на стартовую страницу</description>
-            <from-outcome>success</from-outcome>
+<!--            <from-outcome>success</from-outcome>-->
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>

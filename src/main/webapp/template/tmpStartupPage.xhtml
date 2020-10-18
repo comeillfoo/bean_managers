@@ -7,35 +7,36 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <title><ui:insert name="title">Startup Page Template Title</ui:insert></title>
+    <ui:insert name="title">Startup Page Template Title</ui:insert>
 </h:head>
 
 <h:body>
     <div id="wrap">
         <div class="header">
-            <ui:composition template="/template/tmpAuthor.xhtml">
-                <ui:define name="author__logo"><img src="" alt="logo" /></ui:define>
-                <ui:define name="author__name-surname">Сушкевич Антон</ui:define>
-                <ui:define name="author__group-number">P3214</ui:define>
-                <ui:define name="author__variant-number">381891</ui:define>
-            </ui:composition>
-            <ui:composition template="/template/tmpAuthor.xhtml">
-                <ui:define name="author__logo"><img src="" alt="logo" /></ui:define>
-                <ui:define name="author__name-surname">Хананов Ленар</ui:define>
-                <ui:define name="author__group-number">P3214</ui:define>
-                <ui:define name="author__variant-number">381891</ui:define>
-            </ui:composition>
+            <ui:insert name="persone-1">
+                <ui:include src="/template/tmpAuthor.xhtml" >
+                    <ui:define name="author__name-surname">Хананов Ленар</ui:define>
+                </ui:include>
+            </ui:insert>
+<!--            <ui:component template="/template/tmpAuthor.xhtml">-->
+<!--                <ui:define name="author__logo"><img src="" alt="logo" /></ui:define>-->
+<!--                <ui:define name="author__name-surname">Хананов Ленар</ui:define>-->
+<!--                <ui:define name="author__group-number">P3214</ui:define>-->
+<!--                <ui:define name="author__variant-number">381891</ui:define>-->
+<!--            </ui:component>-->
+
+<!--            <ui:include src="/template/tmpAuthor.xhtml"/>-->
         </div>
 
         <div id="clock">
             <p:clock autoSync="true" syncInterval="5000" pattern="HH:mm:ss dd.MM.yyyy" displayMode="digital" />
         </div>
 
-        <div class="content">
-            <ui:insert name="form">
-                <ui:include src="/template/tmpForm.xhtml" />
-            </ui:insert>
-        </div>
+<!--        <div class="content">-->
+<!--            <ui:insert name="form">-->
+<!--                <ui:include src="/template/tmpForm.xhtml" />-->
+<!--            </ui:insert>-->
+<!--        </div>-->
 
         <!-- accordingly to JSF 2.0 it uses navigation-rules -->
         <h:link value="на основную страницу" />

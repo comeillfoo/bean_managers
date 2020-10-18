@@ -14,7 +14,8 @@ public class SessionBean {
 
     public List<Entry> getEntryList() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
-        HttpSession httpSession = (HttpSession) facesContext.getExternalContext();
+        HttpSession httpSession = (HttpSession) facesContext.getExternalContext().getSession(false);
+//        ArrayList<Entry> entryList = (ArrayList<Entry>) facesContext.getExternalContext().getSessionMap().get("entryList");
         entryList = (ArrayList)httpSession.getAttribute("entryList");
         if(entryList == null) {
             entryList = new ArrayList<Entry>();
