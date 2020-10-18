@@ -21,5 +21,4 @@
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-
 </faces-config>
