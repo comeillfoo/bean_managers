@@ -18,7 +18,7 @@
                     R
                 </th>
             </tr>
-            <c:forEach var="entry" items="#{resultBean.resultEntry}">
+            <c:forEach var="entry" items="#{resultBean.resultsListFromDB}">
                 <tr>
                     <td>
                         ${entry.x}
@@ -30,7 +30,7 @@
                         ${entry.r}
                     </td>
                     <td>
-                        ${entry.isHit}
+                        ${entry.hit}
                     </td>
                 </tr>
             </c:forEach>

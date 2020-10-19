@@ -8,29 +8,54 @@
 
 <h:head>
     <title><ui:insert name="title">Start page title</ui:insert></title>
+    <h:outputStylesheet name="startup.css" library="css" />
 </h:head>
 
 <h:body>
-    <div id="wrap">
-        <div class="header">
-            <ui:decorate template="tmpAuthor.xhtml">
-                <ui:define name="author__name-surname">Сушкевич Антон</ui:define>
-                <ui:define name="author__group-number">P3214</ui:define>
-                <ui:define name="author__variant-number">381891</ui:define>
-            </ui:decorate>
-            <ui:decorate template="tmpAuthor.xhtml">
-                <ui:define name="author__name-surname">Хананов Ленар</ui:define>
-                <ui:define name="author__group-number">P3214</ui:define>
-                <ui:define name="author__variant-number">381891</ui:define>
-            </ui:decorate>
-        </div>
+    <div class="wrap__pos--centered">
+        <table>
+            <caption class="el__offset-bottom--huge title__text--left title__border--left"><h:link href="https://github.com/Come1LLF00/bean_managers" styleClass="title__text" value="Точки на области | Points among the area" /></caption>
+            <thead>
+                <tr><th colspan="2" class="cell-text__align--right cell-text__style-special">Авторы</th></tr>
+                <tr>
+                    <td>
+                        <ui:decorate template="tmpAuthor.xhtml">
+                            <ui:define name="author__logo">
+                                <a href="https://github.com/Leargy">
+                                    <h:graphicImage url="/resources/img/leargy.png" styleClass="img__size--reduced el__border--rounded" />
+                                </a>
+                            </ui:define>
+                            <ui:define name="author__name-surname">Сушкевич Антон</ui:define>
+                            <ui:define name="author__group-number">P3214</ui:define>
+                            <ui:define name="author__variant-number">381891</ui:define>
+                        </ui:decorate>
+                    </td>
 
-        <div id="clock">
-            <p:clock autoSync="true" syncInterval="5000" pattern="HH:mm:ss dd.MM.yyyy" displayMode="digital" />
-        </div>
-
-        <!-- accordingly to JSF 2.0 it uses navigation-rules -->
-        <h:link value="на основную страницу" />
+                    <td>
+                        <ui:decorate template="tmpAuthor.xhtml">
+                            <ui:define name="author__logo">
+                                <a href="https://github.com/Come1LLF00">
+                                    <h:graphicImage url="/resources/img/cif.png" styleClass="img__size--reduced el__border--rounded" />
+                                </a>
+                            </ui:define>
+                            <ui:define name="author__name-surname">Хананов Ленар</ui:define>
+                            <ui:define name="author__group-number">P3214</ui:define>
+                            <ui:define name="author__variant-number">381891</ui:define>
+                        </ui:decorate>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><th colspan="2" class="cell-text__align--right cell-text__style-special">Часы</th></tr>
+                <tr><td colspan="2" class="cell-text__align--right cell__spaces--internal"><p:clock autoSync="true" syncInterval="5000" pattern="HH:mm:ss dd.MM.yyyy" displayMode="digital" /></td></tr>
+                <tr>
+                    <td colspan="2" class="cell-text__align--centre">
+                        <!-- accordingly to JSF 2.0 it uses navigation-rules -->
+                        <h:link styleClass="link__btn link__text--capitalize el__offset-top--huge el__border--rounded" value="на основную страницу" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </h:body>
 

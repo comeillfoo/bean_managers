@@ -9,21 +9,21 @@ public class Session {
 
     public Session() {}
 
-    public List<Entry> getSessionEntryList() {
+    public List<ResultBean> getSessionResultBeanList() {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         HttpSession httpSession = (HttpSession) facesContext.getExternalContext().getSession(false);
 //        ArrayList<Entry> entryList = (ArrayList<Entry>) facesContext.getExternalContext().getSessionMap().get("entryList");
-        List<Entry> entryList = (ArrayList)httpSession.getAttribute("entryList");
-        if(entryList == null) {
-            entryList = new ArrayList<Entry>();
+        List<ResultBean> resultsList = (ArrayList)httpSession.getAttribute("entryList");
+        if(resultsList == null) {
+            resultsList = new ArrayList<ResultBean>();
         }
-        return entryList;
+        return resultsList;
     }
 
-    public void saveSessionEntryList(List<Entry> entryList) {
+    public void saveSessionEntryList(List<ResultBean> resultsList) {
         FacesContext facesContext = FacesContext.getCurrentInstance();
         HttpSession httpSession = (HttpSession) facesContext.getExternalContext().getSession(false);
-        httpSession.setAttribute("entryList", entryList);
+        httpSession.setAttribute("resultsList", resultsList);
     }
 
     public String getSessionId() {
