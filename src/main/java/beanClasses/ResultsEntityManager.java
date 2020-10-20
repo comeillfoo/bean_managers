@@ -1,4 +1,4 @@
-package beans;
+package beanClasses;
 
 import jakarta.persistence.*;
 

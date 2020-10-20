@@ -17,8 +17,13 @@
                 <th>
                     R
                 </th>
+                <th>
+                    Is hit
+                </th>
+
             </tr>
-            <c:forEach var="entry" items="#{resultBean.resultEntry}">
+<!--            <c:set var="entryList" value="#{sessionBean.resultsEntityManagerList}"/>-->
+            <c:forEach var="entry" items="#{sessionBean.resultsEntityManagerList}">
                 <tr>
                     <td>
                         ${entry.x}
@@ -30,7 +35,7 @@
                         ${entry.r}
                     </td>
                     <td>
-                        ${entry.isHit}
+                        ${entry.hit}
                     </td>
                 </tr>
             </c:forEach>

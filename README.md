@@ -1,5 +1,5 @@
 # bean_managers
-The third problem of web-programming discipline. Must have JSF framework and working PostgreSQL database via JPA with ORM. Also must have a set of beans that control the workflow and because beans are delicious.
+The third problem of web-programming discipline. Must have JSF framework and working PostgreSQL database via JPA with ORM. Also must have a set of beanClasses that control the workflow and because beanClasses are delicious.
 
 ## Вариант: 381891
 
@@ -10,7 +10,7 @@ The third problem of web-programming discipline. Must have JSF framework and wor
 
 ![Task Area](https://github.com/Come1LLF00/bean_managers/blob/master/areas.png "Area")
 
-Приложение должно включать в себя 2 facelets-шаблона - стартовую страницу и основную страницу приложения, а также набор управляемых бинов (managed beans), реализующих логику на стороне сервера.
+Приложение должно включать в себя 2 facelets-шаблона - стартовую страницу и основную страницу приложения, а также набор управляемых бинов (managed beanClasses), реализующих логику на стороне сервера.
 
 #### Стартовая страница должна содержать следующие элементы:
 
