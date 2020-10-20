@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee"
-         version="3.0">
+         version="2.5">
 
     <!-- display name -->
     <display-name>bean_managers</display-name>
-
-    <!-- adding beans configuration -->
-    <context-param>
-        <param-name>javax.faces.CONFIG_FILES</param-name>
-        <param-value>/WEB-INF/beans-config.xml</param-value>
-    </context-param>
 
     <!-- Faces Servlet -->
     <servlet>
@@ -28,4 +22,10 @@
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+
+    <!-- adding beanClasses configuration -->
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/beans-config.xml</param-value>
+    </context-param>
 </web-app>
