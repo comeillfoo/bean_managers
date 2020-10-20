@@ -8,25 +8,25 @@
 <ui:composition>
     <table>
           <tr>
-              <td>
+              <td rowspan="3">
                   <ui:insert name="author__logo">
                       <h:graphicImage alt="logo" />
                   </ui:insert>
               </td>
-              <th>ФИО</th>
-              <td>
+              <th class="text__style--colon cell-text__align--right">ФИО</th>
+              <td class="text__style--itshape text__style--underlined cell-text__font--serif">
                   <ui:insert name="author__name-surname">Author</ui:insert>
               </td>
           </tr>
           <tr>
-              <th>Группа</th>
-              <td>
+              <th class="text__style--colon cell-text__align--right">Группа</th>
+              <td class="text__style--itshape text__style--underlined cell-text__font--serif">
                   <ui:insert name="author__group-number">group</ui:insert>
               </td>
           </tr>
           <tr>
-              <th>Вариант</th>
-              <td>
+              <th class="text__style--colon cell-text__align--right">Вариант</th>
+              <td class="text__style--itshape text__style--underlined cell-text__font--serif">
                   <ui:insert name="author__variant-number">number</ui:insert>
               </td>
           </tr>

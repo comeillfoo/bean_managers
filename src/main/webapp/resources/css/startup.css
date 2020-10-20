@@ -1,0 +1,130 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #293f50;
+    color: #eaeaea;
+    font-family: "Lucida Sans", Helvetica, Roboto, Verdana, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.wrap__pos--centered {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.title__text {
+    color: #eaeaea;
+    font-family: "Lucida Sans", Helvetica, Roboto, Verdana, sans-serif;
+    font-size: 40px;
+    text-decoration: none;
+    font-variant: small-caps;
+}
+
+.title__text:hover {
+    color: #648880;
+    text-decoration: underline;
+}
+
+.title__text--left {
+    text-align: left;
+}
+
+.title__border--left {
+    border-left: 8px solid #648880;
+    padding-left: 16px;
+}
+
+.link__btn {
+    display: inline-block;
+    border: 2px solid #eaeaea;
+    background-color: #293f50;
+    color: #eaeaea;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 16px 8px;
+}
+
+.link__btn:hover {
+    background-color: #eaeaea;
+    color: #2f4f4f;
+    text-decoration: underline;
+}
+
+.link__text--capitalize {
+    text-transform: capitalize;
+}
+
+.el__border--rounded {
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+}
+
+.el__pos--offset {
+    margin: 16px 0;
+}
+
+.el__offset-bottom--huge {
+    margin-bottom: 44px;
+}
+
+.el__offset-top--huge {
+    margin-top: 44px;
+}
+
+.img__size--reduced {
+    width: 240px;
+    height: 240px;
+}
+
+.ui-clock {
+    background: none;
+    color: #4af626;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    background-color: #222;
+    border: 2px solid #648880;
+    border-radius: 0;
+    text-shadow: none;
+    font-weight: 0;
+}
+
+.text__style--itshape {
+    font-style: italic;
+}
+
+.text__style--underlined {
+    text-decoration: underline;
+}
+
+.text__style--colon:after {
+    content: ":";
+}
+
+.cell-text__align--right {
+    text-align: right;
+    padding-left: 4px;
+}
+
+.cell-text__align--centre {
+    text-align: center;
+}
+
+.cell__spaces--internal {
+    padding: 16px 2px;
+}
+
+.cell-text__style-special {
+    font-size: 36px;
+    line-height: 44px;
+    color: #648880;
+    padding-bottom: 22px;
+    font-family: "Open Sans", "Helvetica Neue", "Lucida Sans", Helvetica, Roboto, Verdana, Arial, sans-serif;
+}
+
+.cell-text__font--serif {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 20px;
+}
