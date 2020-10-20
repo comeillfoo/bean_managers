@@ -19,8 +19,7 @@ public class SessionBean implements Serializable {
 
 
     public List<ResultsEntityManager> getResultsEntityManagerList() {
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-        HttpSession httpSession = (HttpSession) facesContext.getExternalContext().getSession(true);
+        HttpSession httpSession = getHttpSession();
         List<ResultsEntityManager> entryList = (ArrayList<ResultsEntityManager>) httpSession.getAttribute("entryList");
         if(entryList == null) {
             entryList = new ArrayList<ResultsEntityManager>();
@@ -29,8 +28,12 @@ public class SessionBean implements Serializable {
     }
 
     public void saveSessionEntryList(List<ResultsEntityManager> entryList) {
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-        HttpSession httpSession = (HttpSession) facesContext.getExternalContext().getSession(true);
+        HttpSession httpSession = getHttpSession();
         httpSession.setAttribute("entryList", entryList);
+    }
+
+    private HttpSession getHttpSession() {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        return (HttpSession) facesContext.getExternalContext().getSession(false);
     }
 }
