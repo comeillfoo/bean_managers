@@ -7,7 +7,7 @@
             This unit manages points hitting result
         </description>
 
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <provider>javax.persistence.spi.PersistenceProvider</provider>
         <!-- JNDI name -->
         <jta-data-source>java:/postgresDS</jta-data-source>
 
@@ -17,6 +17,8 @@
             <property name="eclipselink.target-server" value="JBoss"/>
             <!-- JNDI name -->
             <property name="javax.persistence.jtaDataSource" value="java:/postgresDS"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://pg:5432/studs"/>
+            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
         </properties>
     </persistence-unit>
 </persistence>

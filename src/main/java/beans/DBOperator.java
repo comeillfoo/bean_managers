@@ -1,13 +1,11 @@
 package beans;
 
 import entities.ResultsEntityManager;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.Query;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class DBOperator {
 
     // adding (creating) new results
     public static String createNewResults(Date date, String sessionId, double x, double y, double r, String hitting, long checkingTime) {
-        if(!transactionObj.isActive()) {
+        if (!transactionObj.isActive()) {
             transactionObj.begin();
         }
 
@@ -47,4 +45,6 @@ public class DBOperator {
         transactionObj.commit();
         return "main.xhtml?faces-redirect=true";
     }
+
+    public DBOperator() {    }
 }
