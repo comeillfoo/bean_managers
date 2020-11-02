@@ -12,7 +12,7 @@ import java.util.List;
 public class DBOperator {
     private static final String PERSISTENCE_UNIT_NAME = "ResultsManagement";
     private static final EntityManager entityMgrObj = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
-    private static final EntityTransaction transactionObj = entityMgrObj.getTransaction();
+    private static final EntityTransaction transaction = entityMgrObj.getTransaction();
 
     // fetching user point hit results details from the db
     @SuppressWarnings("unchecked")
@@ -29,8 +29,8 @@ public class DBOperator {
 
     // adding (creating) new results
     public static String createNewResults(Date date, String sessionId, double x, double y, double r, String hitting, long checkingTime) {
-        if (!transactionObj.isActive()) {
-            transactionObj.begin();
+        if (!transaction.isActive()) {
+            transaction.begin();
         }
 
         ResultsEntityManager newResultObj = new ResultsEntityManager();
@@ -42,7 +42,7 @@ public class DBOperator {
         newResultObj.setHit(hitting);
         newResultObj.setTime(checkingTime);
         entityMgrObj.persist(newResultObj);
-        transactionObj.commit();
+        transaction.commit();
         return "main.xhtml?faces-redirect=true";
     }
 

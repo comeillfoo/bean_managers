@@ -2,23 +2,28 @@
 <persistence version="2.1"
              xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="ResultsManagement" transaction-type="JTA">
+    <persistence-unit name="ResultsManagement" transaction-type="RESOURCE_LOCAL">
         <description>
             This unit manages points hitting result
         </description>
 
-        <provider>javax.persistence.spi.PersistenceProvider</provider>
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <!-- JNDI name -->
-        <jta-data-source>java:/postgresDS</jta-data-source>
+        <!-- <jta-data-source>java:/postgresDS</jta-data-source> -->
 
         <class>entities.ResultsEntityManager</class>
 
         <properties>
-            <property name="eclipselink.target-server" value="JBoss"/>
-            <!-- JNDI name -->
-            <property name="javax.persistence.jtaDataSource" value="java:/postgresDS"/>
-            <property name="eclipselink.jdbc.url" value="jdbc:postgresql://pg:5432/studs"/>
-            <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
+            <!--
+                <property name="eclipselink.target-server" value="JBoss"/>
+                <property name="javax.persistence.jtaDataSource" value="java:/postgresDS"/>
+                <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://pg:5432/studs"/>
+                <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://pg:5432/studs"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="s284733"/>
+            <property name="javax.persistence.jdbc.password" value="nsh845"/>
         </properties>
     </persistence-unit>
 </persistence>

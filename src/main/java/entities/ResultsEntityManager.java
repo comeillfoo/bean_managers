@@ -13,7 +13,7 @@ public class ResultsEntityManager {
     private long id;
 
     @Basic
-    @Column(name = "sessionId")
+    @Column(name = "sessionid")
     private String sessionId;
 
     @Column(name="date")
