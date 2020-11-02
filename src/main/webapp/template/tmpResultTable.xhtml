@@ -3,37 +3,41 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
     <ui:composition>
-        <table>
-            <tr>
-                <th>
-                    X
-                </th>
-                <th>
-                    Y
-                </th>
-                <th>
-                    R
-                </th>
-            </tr>
-            <c:forEach var="entry" items="#{resultBean.resultsListFromDB}">
-                <tr>
-                    <td>
-                        ${entry.x}
-                    </td>
-                    <td>
-                        ${entry.y}
-                    </td>
-                    <td>
-                        ${entry.r}
-                    </td>
-                    <td>
-                        ${entry.hit}
-                    </td>
-                </tr>
-            </c:forEach>
-        </table>
+        <h:dataTable id="resultsTable" binding="#{table}" value="#{resultBean.resultListFromDb(session)}" var="result">
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                <h:outputText value="#{result.id}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Date</f:facet>
+                <h:outputText value="#{result.date}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Time</f:facet>
+                <h:outputText value="#{result.time}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">X</f:facet>
+                <h:outputText value="#{result.x}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Y</f:facet>
+                <h:outputText value="#{result.y}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">R</f:facet>
+                <h:outputText value="#{result.r}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Hit</f:facet>
+                <h:outputText value="#{result.hit}" />
+            </h:column>
+
+        </h:dataTable>
     </ui:composition>
 </html>

@@ -5,10 +5,11 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="PointHitResultsUnit" />
+          <factory-entry name="PointHitResultsUnit" value="3969b884-95fe-4a9a-909c-ccaccc5fc7e9" />
+          <factory-entry name="ResultsManagement" value="3969b884-95fe-4a9a-909c-ccaccc5fc7e9" />
         </datasource-mapping>
         <naming-strategy-map />
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/java/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>

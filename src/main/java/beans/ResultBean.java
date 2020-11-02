@@ -1,37 +1,38 @@
 package beans;
 
 
-import java.io.Serializable;
+import checking.Check;
+import entities.Result;
+import entities.ResultsEntityManager;
+
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
-public class ResultBean implements Serializable {
-    private static final long  serialVersionUID = 1L;
+public class ResultBean extends Result {
+    public String addResult(ResultBean newResult) {
+        long start = new Date().getTime();
+        // -- checking point hit --
+        boolean hit = Check.isHit(newResult);
+        String hitView = hit? "yes" : "no";
+        // -- checking point hit --
+        long finish = new Date().getTime();
+        // get instance of application faces context
+        FacesContext fctx = FacesContext.getCurrentInstance();
+        // get session for session identificator
+        HttpSession session = (HttpSession) fctx.getExternalContext().getSession(true);
 
-    private Double x;
-    private Double y;
-    private Double r;
-    private boolean hit = false;
-    private long time;
-
-    public Double getX() { return x; }
-    public Double getY() { return y; }
-    public Double getR() { return r; }
-    public boolean isHit() { return hit; }
-    public long getTime() { return time; }
-
-    public void setX(Double x) { this.x = x; }
-    public void setY(Double y) { this.y = y; }
-    public void setR(Double r) { this.r = r; }
-    public void setHit(boolean hit) { this.hit = hit; }
-    public void setTime(long time) { this.time = time; }
-
-    public ResultBean() { }
-
-    public List<ResultsEntityManager> getResultsListFromDB() {
-        return DBOperator.getAllResultsDetails();
+        // -- building bean
+        newResult.setDate(new Date());
+        newResult.setHit(hit);
+        newResult.setTime(finish - start);
+        newResult.setSessionId(session.getId());
+        // -- building bean
+        return DBOperator.createNewResults(newResult.getDate(), newResult.getSessionId(), newResult.getX(), newResult.getY(), newResult.getR(), hitView, newResult.getTime());
     }
 
-    public String addNewResult(ResultBean added) {
-        return DBOperator.createNewResults(added.x, added.y, added.r, added.hit ? "yes" : "no", added.time);
+    public List<ResultsEntityManager> resultListFromDb(HttpSession session) {
+        return DBOperator.getUserResultsDetails(session.getId());
     }
 }

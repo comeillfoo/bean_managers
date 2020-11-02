@@ -10,7 +10,6 @@
 
 <h:body>
     <ui:composition>
-        #{resultBean.resultEntry = sessionBean.entryList}
         <h:form>
             <fieldset>
                 <label>изменение x</label>
@@ -44,7 +43,7 @@
             </fieldset>
 
             <fieldset>
-                <h:commandButton id="submit" name="check" value="#{resultBean.addResult()}" />
+                <h:commandButton id="submit" value="check" value="#{resultBean.addResult(resultBean)}" />
             </fieldset>
         </h:form>
     </ui:composition>
