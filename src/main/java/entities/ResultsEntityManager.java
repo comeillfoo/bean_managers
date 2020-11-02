@@ -92,5 +92,4 @@ public class ResultsEntityManager {
         result = 31 * result + (hit != null ? hit.hashCode() : 0);
         return result;
     }
-
 }

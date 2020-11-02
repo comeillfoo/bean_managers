@@ -34,6 +34,7 @@ public class DBOperator {
         }
 
         ResultsEntityManager newResultObj = new ResultsEntityManager();
+        newResultObj.setId(getMaxResultId());
         newResultObj.setSessionId(sessionId);
         newResultObj.setDate(date);
         newResultObj.setX(x);
@@ -47,4 +48,13 @@ public class DBOperator {
     }
 
     public DBOperator() {    }
+
+    private static long getMaxResultId() {
+        long maxSchoolId = 1;
+        Query queryObj = entityMgrObj.createQuery("SELECT MAX(s.id)+1 FROM ResultsEntityManager s");
+        if(queryObj.getSingleResult() != null) {
+            maxSchoolId = (Long) queryObj.getSingleResult();
+        }
+        return maxSchoolId;
+    }
 }
