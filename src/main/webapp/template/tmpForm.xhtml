@@ -24,12 +24,10 @@
             <fieldset>
                 <label>Y</label>
                 <h:inputText id="y-changing-parameter" value="#{resultBean.y}" required="true">
-                    <f:convertNumber>
-                        <f:validateDoubleRange minimum="-3" maximum="5" />
-                    </f:convertNumber>
+                    <f:validateDoubleRange minimum="-3" maximum="5" />
                 </h:inputText>
 
-                <h:message for="y-changing-parameter">Y-value should be specified</h:message>
+                <h:message for="y-changing-parameter" style="color: #ce0000" />
             </fieldset>
 
             <fieldset>
@@ -43,7 +41,7 @@
             </fieldset>
 
             <fieldset>
-                <h:commandButton id="submit" value="check" action="#{resultBean.addResult(resultBean)}" />
+                <h:commandButton id="submit" value="check" action="#{resultBean.addResult(resultBean)}" styleClass="btn, btn__size--submit"/>
             </fieldset>
         </h:form>
     </ui:composition>

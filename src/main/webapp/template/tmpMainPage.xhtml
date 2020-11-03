@@ -12,21 +12,28 @@
     </h:head>
 
     <h:body>
-        <ui:insert name="form">
-            <ui:include src="tmpForm.xhtml" />
-        </ui:insert>
+        <div class="wrapper">
+            <div id="logo" class="title__main">
+                Форма | Dots among the area
+            </div>
+            <ui:insert name="form">
+                <ui:include src="tmpForm.xhtml" />
+            </ui:insert>
 
-        <canvas id="working-area" width="480" height="480">
-            Canvas not supported
-        </canvas>
+            <canvas id="working-area" width="480" height="480">
+                Canvas not supported
+            </canvas>
 
-        <!-- there must be result table -->
-        <div>
-            <ui:include src="tmpResultTable.xhtml"/>
+            <!-- there must be result table -->
+            <div>
+                <ui:include src="tmpResultTable.xhtml"/>
+            </div>
+
+            <!-- accordingly to JSF 2.0 it uses navigation-rules -->
+            <div class="cell-text__align--center">
+                <h:link styleClass="link__btn link__text--capitalize el__offset-top--huge el__border--rounded" value="на стартовую страницу" outcome="to-startup" />
+            </div>
         </div>
-
-        <!-- accordingly to JSF 2.0 it uses navigation-rules -->
-        <h:link value="на стартовую страницу" outcome="to-startup"/>
     </h:body>
 
 </ui:composition>
