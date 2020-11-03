@@ -1,7 +1,5 @@
 package entities;
 
-import org.eclipse.persistence.annotations.PrimaryKey;
-
 import javax.persistence.*;
 import java.util.Date;
 
