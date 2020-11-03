@@ -39,7 +39,6 @@ public class ResultBean {
 
 
     public String addResult() {
-        System.out.println("SUCK");
         long start = new Date().getTime();
 
         Check.isHit(resultsEntityManager);

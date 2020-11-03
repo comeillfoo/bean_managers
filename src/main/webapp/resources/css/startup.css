@@ -128,3 +128,17 @@ body {
     font-family: "Times New Roman", Georgia, serif;
     font-size: 20px;
 }
+
+.row__bg--highlighted {
+    background-color: #204866;
+}
+
+.row__border--split {
+    border-top: 4px solid #2c5c80;
+    border-bottom: 4px solid #2c5c80;
+    padding: 0 22px;
+}
+
+.tb__borders--collapsed {
+    border-collapse: collapse;
+}

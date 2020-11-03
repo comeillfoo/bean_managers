@@ -5,7 +5,7 @@
 body {
     color: #eaeaea;
     font-size: 16px;
-    background-color: #293f50;
+    background-color: #204866;
 }
 
 .wrapper {
@@ -23,6 +23,11 @@ body {
 .field__board--rounded {
     border: 2px solid #eaeaea;
     border-radius: 5%;
+}
+
+.field__board {
+    background-color: #293f50;
+    border: 4px double #a9afb3;
 }
 
 .cell__heading {
@@ -146,6 +151,7 @@ body {
     font-variant: small-caps;
     font-weight: bold;
     margin-bottom: 22px;
+    border-color: #a9afb3;
 }
 
 .results__table--fill {
@@ -193,4 +199,26 @@ body {
 
 .results__cell--scrollable {
     overflow-y: auto;
+    padding-right: 22px;
+}
+
+.container__align--center {
+    margin: 22px auto;
+    padding: 16px;
+    width: 50%;
+    /*background-color: #e8c598;*/
+    border: 4px double #a9afb3;
+}
+
+.container__style--inline {
+    display: inline-block;
+    background-color: #293f50;
+}
+
+.container__width--reduced {
+    width: 40%;
+}
+
+.container__width--normal {
+    width: 55%;
 }

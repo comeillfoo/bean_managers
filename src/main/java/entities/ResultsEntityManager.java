@@ -24,7 +24,7 @@ public class ResultsEntityManager {
     @Column(name="y")
     private double y;
     @Column(name="r")
-    private double r;
+    private double r = 1;
 
     @Column(name="time")
     private long time;

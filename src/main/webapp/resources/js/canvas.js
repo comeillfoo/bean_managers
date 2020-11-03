@@ -1,6 +1,6 @@
 let canvas = document.getElementById('working-area');
 let ctx = canvas.getContext('2d');
-let canvasDiv = document.getElementById('canvas');
+// let canvasDiv = document.getElementById('');
 
 let canvasCenterX = canvas.width / 2;
 let canvasCenterY = canvas.height / 2;
@@ -51,16 +51,18 @@ function drawNick() {
     }
 }
 
-function drawPoint(x, y, r, rgbX, rgbY, rgbZ, shift) {
-    // console.log("drawPoint: r=" + r);
+function drawPoint(x, y, r, isHit, rgbX, rgbY, rgbZ, shift) {
+    console.log("drawPoint: r=" + r);
     let canvasX = canvasCenterX + ((canvasCenterX - canvasCenterX * 0.2) * `${x}`/`${r}` * shift)
     let canvasY = canvasCenterY - ((canvasCenterY - canvasCenterY * 0.2) * `${y}`/`${r}` * shift)
     ctx.beginPath()
     // canvasDots.clearRect(0, 0, cArrows.width, cArrows.height)
     ctx.moveTo(canvasX, canvasY)
-    ctx.arc(canvasX, canvasY, 3, 0, 2 * Math.PI, false)
+    ctx.arc(canvasX, canvasY, 4, 0, 2 * Math.PI, false)
     // canvasDots.fillStyle = '#ff0033'
-    ctx.fillStyle = `rgb(${rgbX},${rgbY},${rgbZ})`;
+    if (isHit == "No") ctx.fillStyle = `#cecece`;
+    else ctx.fillStyle = `#222222`;
+
     ctx.fill()
 }
 
@@ -74,9 +76,10 @@ function drawPoints(relativeR) {
             if (i == 0) break;
             let coords = [];
 
-            for (let j = 3; j < 6; j++) {
-                coords[j-3] = trArray[i].children[j].innerText;
+            for (let j = 2; j < 6; j++) {
+                coords[j-2] = trArray[i].children[j].innerText;
             }
+
             let shift = 1;
             if (relativeR != undefined && relativeR != coords[2]) {
                 // console.log("Points r= " + coords[2]);
@@ -86,7 +89,7 @@ function drawPoints(relativeR) {
 
             rgbY += 26;
             rgbY += 26;
-            drawPoint(...coords, 221, rgbY, rgbZ, shift);
+            drawPoint( ...coords, 221, rgbY, rgbZ, shift);
         }
     }
 }
@@ -148,15 +151,17 @@ dotCanvas.onclick = function(mouse) {
         let currentY = (canvasCenterY  - mouseY) / (canvasCenterY  - canvasCenterY  * 0.2) * +r;
 
         console.log(currentX)
-        document.getElementById("form:x-changing-parameter").setAttribute("value", currentX);
-        document.getElementById("form:y-changing-parameter").setAttribute("value", currentY);
+
+        document.getElementById("j_idt9:x-changing-parameter").setAttribute("value", currentX);
+        document.getElementById("j_idt9:y-changing-parameter").setAttribute("value", currentY);
         // $('#form').submit();
         // drawPoint();
-        $('[id="form:submit"]').click();
+        $('[id="j_idt9:submit"]').click();
 
+        drawPoints(r);
     } else {
         alert("R value should be declared!");
     }
 }
 
-redraw("R");
+redraw("1.0");

@@ -11,28 +11,29 @@
 <h:body>
     <ui:composition>
         <h:form>
-            <fieldset>
+            <fieldset class="field__board">
                 <label>X</label>
-                <h:selectOneRadio id="x-changing-parameter" layout="pageDirection" value="#{resultBean.x}" required="true">
+                <h:selectOneRadio layout="pageDirection" value="#{resultBean.resultsEntityManager.x}" required="true">
                     <c:forEach var="x" begin="-4" end="3" step="1">
                         <c:set var="counter" value="${x / 2 }" />
                         <f:selectItem itemLabel="${counter}" itemValue="${counter}" />
                     </c:forEach>
                 </h:selectOneRadio>
+                <h:inputHidden id="x-changing-parameter" value="#{resultBean.resultsEntityManager.x}"/>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="field__board">
                 <label>Y</label>
-                <h:inputText id="y-changing-parameter" value="#{resultBean.y}" required="true">
+                <h:inputText id="y-changing-parameter" value="#{resultBean.resultsEntityManager.y}" required="true">
                     <f:validateDoubleRange minimum="-3" maximum="5" />
                 </h:inputText>
 
                 <h:message for="y-changing-parameter" style="color: #ce0000" />
             </fieldset>
 
-            <fieldset>
+            <fieldset class="field__board">
                 <label>R</label>
-                <h:selectOneRadio id="r-changing-parameter" layout="pageDirection" value="#{resultBean.r}" required="true">
+                <h:selectOneRadio id="r-changing-parameter" layout="pageDirection" onchange="redraw(this.value)" value="#{resultBean.resultsEntityManager.r}" required="true">
                     <c:forEach var="r" begin="2" end="6" step="1">
                         <c:set var="counter" value="${r / 2 }" />
                         <f:selectItem itemLabel="${counter}" itemValue="${counter}" />
@@ -40,8 +41,8 @@
                 </h:selectOneRadio>
             </fieldset>
 
-            <fieldset>
-                <h:commandButton id="submit" value="check" action="#{resultBean.addResult(resultBean)}" styleClass="btn, btn__size--submit"/>
+            <fieldset class="field__board">
+                <h:commandButton id="submit" value="check" action="#{resultBean.addResult()}" styleClass="btn, btn__size--submit"/>
             </fieldset>
         </h:form>
     </ui:composition>

@@ -28,24 +28,40 @@ public class DBOperator {
     }
 
     // adding (creating) new results
-    public static String createNewResults(Date date, String sessionId, double x, double y, double r, String hitting, long checkingTime) {
+//    public static String createNewResults(Date date, String sessionId, double x, double y, double r, String hitting, long checkingTime) {
+//        if (!transaction.isActive()) {
+//            transaction.begin();
+//        }
+//
+//        ResultsEntityManager newResultObj = new ResultsEntityManager();
+//        newResultObj.setId(getMaxResultId());
+//        newResultObj.setSessionId(sessionId);
+//        newResultObj.setDate(date);
+//        newResultObj.setX(x);
+//        newResultObj.setY(y);
+//        newResultObj.setR(r);
+//        newResultObj.setHit(hitting);
+//        newResultObj.setTime(checkingTime);
+//        entityMgrObj.persist(newResultObj);
+//        transaction.commit();
+//        return "main.xhtml?faces-redirect=true";
+//    }
+
+    // adding (creating) new results
+    public static String createNewResults(ResultsEntityManager resultsEntityManager) {
         if (!transaction.isActive()) {
             transaction.begin();
         }
 
-        ResultsEntityManager newResultObj = new ResultsEntityManager();
-        newResultObj.setId(getMaxResultId());
-        newResultObj.setSessionId(sessionId);
-        newResultObj.setDate(date);
-        newResultObj.setX(x);
-        newResultObj.setY(y);
-        newResultObj.setR(r);
-        newResultObj.setHit(hitting);
-        newResultObj.setTime(checkingTime);
-        entityMgrObj.persist(newResultObj);
+        resultsEntityManager.setId(getMaxResultId());
+
+        entityMgrObj.persist(resultsEntityManager);
+
         transaction.commit();
+
         return "main.xhtml?faces-redirect=true";
     }
+
 
     public DBOperator() {    }
 

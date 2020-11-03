@@ -9,6 +9,7 @@
     <h:head>
         <title><ui:insert name="title">Main Page Template Title</ui:insert></title>
         <h:outputStylesheet name="main.css" library="css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"/>
     </h:head>
 
     <h:body>
@@ -16,14 +17,16 @@
             <div id="logo" class="title__main">
                 Форма | Dots among the area
             </div>
-            <ui:insert name="form">
-                <ui:include src="tmpForm.xhtml" />
-            </ui:insert>
-
-            <canvas id="working-area" width="480" height="480">
-                Canvas not supported
-            </canvas>
-
+            <div class="container__style--inline container__width--reduced">
+                <ui:insert name="form">
+                    <ui:include src="tmpForm.xhtml" />
+                </ui:insert>
+            </div>
+            <div class="container__align--center container__style--inline container__width--normal">
+                <canvas id="working-area" width="480" height="480" >
+                    Canvas not supported
+                </canvas>
+            </div>
             <!-- there must be result table -->
             <div>
                 <ui:include src="tmpResultTable.xhtml"/>
@@ -31,9 +34,10 @@
 
             <!-- accordingly to JSF 2.0 it uses navigation-rules -->
             <div class="cell-text__align--center">
-                <h:link styleClass="link__btn link__text--capitalize el__offset-top--huge el__border--rounded" value="на стартовую страницу" outcome="to-startup" />
+                <h:link styleClass="btn btn__size--submit link__btn link__text--capitalize el__offset-top--huge el__border--rounded" value="на стартовую страницу" outcome="to-startup" />
             </div>
         </div>
+        <h:outputScript name="canvas.js" library="js" />
     </h:body>
 
 </ui:composition>

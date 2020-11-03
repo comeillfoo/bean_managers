@@ -8,7 +8,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
     <ui:composition>
-        <h:dataTable id="resultsTable" binding="#{table}" value="#{resultBean.resultListFromDb(session)}" var="result" styleClass="results__table--fill" headerClass="results__row--heading" rowClasses="results__row--data" columnClasses="results__cell--offset">
+        <h:dataTable id="resultsTable" border="4" binding="#{table}" value="#{resultBean.resultListFromDb(session)}" var="result" styleClass="results__table--fill" headerClass="results__row--heading" rowClasses="results__row--data" columnClasses="results__cell--offset">
             <h:column>
                 <f:facet name="header">Date</f:facet>
                 <div class='results__cell--scrollable'><h:outputText value="#{result.date}" /></div>
