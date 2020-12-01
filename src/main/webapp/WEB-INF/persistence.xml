@@ -5,10 +5,10 @@
     <persistence-unit name="PointHitResultsUnit" transaction-type="RESOURCE_LOCAL">
         <class>beanClasses.ResultsEntityManager</class>
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://pg:5432:studs" />
-            <property name="javax.persistence.jdbc.user" value="s284733" />
-            <property name="javax.persistence.jdbc.password" value="nsh845" />
+            <property name="javax.persistence.jdbc.driver" value="driver" />
+            <property name="javax.persistence.jdbc.url" value="url" />
+            <property name="javax.persistence.jdbc.user" value="user" />
+            <property name="javax.persistence.jdbc.password" value="password" />
         </properties>
     </persistence-unit>
 </persistence>
